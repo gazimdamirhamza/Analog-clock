@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="style.css" >
+
+    <title>analog clock</title>
+  </head>
+  <body>
+  <!--  <h1>NIHAL-Analog-Clock</h1> -->
+  <div class="clock">
+    <div class="indicator">
+      <div class=""></div>
+      <div class=""></div>
+      <div class=""></div>
+      <div class=""></div>
+      <div class=""></div>
+      <div class=""></div>
+      <div class=""></div>
+      <div class=""></div>
+      <div class=""></div>
+      <div class=""></div>
+      <div class=""></div>
+      <div class=""></div>
+      <div class=""></div>
+
+
+
+    </div>
+    <div class="hours"></div>
+    <div class="minutes"></div>
+    <div class="seconds"></div>
+  </div>
+<script>
+
+function clock() {
+  const hours =document.querySelector(".hours");
+  const minutes =document.querySelector(".minutes");
+  const seconds =document.querySelector(".seconds");
+
+  var  date = new Date();
+  var  second = date.getSeconds() * 6;
+  var   minute = date.getMinutes() * 6;
+  var   hour = date.getHours() * 30 ;
+
+
+  seconds.style.transform = `rotateZ(${second}deg)`;
+  minutes.style.transform = `rotateZ(${minute}deg)`;
+  hours.style.transform = `rotateZ(${hour +(minute/12)}deg)`;
+
+ }
+setInterval(clock,1000);
+</script>
+  </body>
+</html>
